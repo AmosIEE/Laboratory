@@ -1,0 +1,20 @@
+.list {
+    list-style: none;
+    background: #61dafb;
+    max-width: 400px;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.card {
+    background: #fb5a73;
+    display: flex;
+    position: relative;
+    left: 0;
+    align-items: center;
+    height: 50px;
+    border-bottom: 1px solid #282c34;
+}
+/*#root {*/
+    /*height: 100%;*/
+/*}*/

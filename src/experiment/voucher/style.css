@@ -1,0 +1,72 @@
+html, body {
+    height: 100%;
+    overflow: scroll;
+}
+body {
+    background: #9ab5a1;
+    overscroll-behavior-y: contain;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 50px;
+}
+.voucher {
+    display: flex;
+}
+.voucher-prev, .voucher-body {
+    padding: 20px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+}
+.voucher-prev {
+    margin-right: 10px;
+}
+.voucher-body {
+    margin-left: 10px;
+}
+
+.voucher-left-corner, .voucher-right-corner {
+    position: relative;
+}
+.voucher-left-corner {
+    margin-left: 10px;
+}
+.voucher-right-corner {
+    margin-right: 10px;
+}
+.voucher-left-corner::before, .voucher-left-corner::after,
+.voucher-right-corner::before, .voucher-right-corner::after {
+    position: absolute;
+    width: 10px;
+    height: 50%;
+    content: "";
+}
+.voucher-left-corner::before {
+    top: 0;
+    right: -10px;
+    background: radial-gradient(10px at right top, transparent 100%, #fff 0%);
+}
+.voucher-left-corner::after {
+    bottom: 0;
+    right: -10px;
+    background: radial-gradient(10px at right bottom, transparent 100%, #fff 0%);
+}
+.voucher-right-corner::before {
+    top: 0;
+    left: -10px;
+    background: radial-gradient(10px at left top, transparent 100%, #fff 0%);
+}
+.voucher-right-corner::after {
+    bottom: 0;
+    left: -10px;
+    background: radial-gradient(10px at left bottom, transparent 100%, #fff 0%);
+}
+
+.test {
+    background: #fff;
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
