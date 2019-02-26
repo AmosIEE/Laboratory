@@ -37,7 +37,13 @@ class Camera extends React.Component {
       _main: function() { self.openCVIsReady() }
     }
     window.Module = Module
-    document.write('<script async src="https://huningxin.github.io/opencv.js/build/wasm/opencv.js" />')
+
+    // import web assembly openCV
+    const script = document.createElement('script')
+    script.type = "text/javascript"
+    script.src = 'https://huningxin.github.io/opencv.js/build/wasm/opencv.js'
+    script.async = true
+    document.body.appendChild(script)
   }
 
   initVideo = () => {
