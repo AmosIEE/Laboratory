@@ -21,6 +21,7 @@ class Navigator extends React.Component {
           <li style={{textAlign: 'left'}}><Link to='/experiment/list'>List</Link></li>
           <li style={{textAlign: 'left'}}><Link to='/experiment/pullToRefresh'> Pull to refresh</Link></li>
           <li style={{textAlign: 'left'}}><Link to='/experiment/camera'>Face Detection</Link></li>
+          <li style={{textAlign: 'left'}}><Link to='/experiment/gradient'>Gradient</Link></li>
         </ul>
       </div>
     )

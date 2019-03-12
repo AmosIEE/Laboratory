@@ -7,6 +7,7 @@ import MobxProvider from './experiment/mobx/MobxProvider'
 import List from './experiment/slideToRemove/List'
 import Container from './experiment/pullToRefresh/Container'
 import Camera from './experiment/faceDetection/Camera'
+import GradientText from './experiment/gradientText/GradientText'
 /**
  * Created by yuepeng.li on 2019/1/16
  */
@@ -24,6 +25,7 @@ export const route = () => {
         <Route path='/experiment/list' exact component={List} />
         <Route path='/experiment/pullToRefresh' exact component={Container} />
         <Route path='/experiment/camera' exact component={Container} />
+        <Route path='/experiment/gradient' exact component={GradientText} />
       </Switch>
     </Router>
   )

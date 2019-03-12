@@ -1,0 +1,11 @@
+.gradient-container {
+    background-image: -webkit-linear-gradient(left, #ff00f1, #07ff0a);
+    -webkit-background-clip:text;
+    word-break: break-all;
+    width: 100px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /** 显示的行数 **/
+    overflow: hidden
+}
