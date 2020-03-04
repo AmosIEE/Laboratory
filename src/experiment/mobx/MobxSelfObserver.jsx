@@ -12,7 +12,7 @@ class MobxSelfObserver extends React.Component {
     changeFilter(e.target.value)
   }
   render() {
-    const {todos, filter, filteredTodo} = this.props.mobxStore
+    const {filter, filteredTodo} = this.props.mobxStore
     return (
       <div className='container'>
         <h2>TODO</h2>

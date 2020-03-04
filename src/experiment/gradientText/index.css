@@ -1,4 +1,5 @@
 .gradient-container {
+    /*-webkit-text-fill-color: transparent;*/
     background-image: -webkit-linear-gradient(left, #ff00f1, #07ff0a);
     -webkit-background-clip:text;
     word-break: break-all;

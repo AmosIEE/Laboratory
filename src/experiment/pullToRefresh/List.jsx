@@ -8,14 +8,52 @@ import '../slideToRemove/index.css'
 
 const MAX_LOADING_HEIGHT = 100
 
+const compareTable = {
+}
+
 class PullList extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      offset: 0
+      offset: 0,
+      prev: 1,
+      after: 0
     }
     this.refreshTrigged = false
     this.prevTouch = 0
+  }
+
+  componentDidMount () {
+    document.body.addEventListener('scroll', this.handleTextFade)
+    document.body.addEventListener('touchend', this.handleMiddleState)
+  }
+
+  handleMiddleState = (e) => {
+    if (document.body.scrollTop >= 50 && document.body.scrollTop <= 300) {
+       this.setState({
+         prev: document.body.scrollTop / 300 < 0.5 ? 1 : 0,
+         after: document.body.scrollTop / 300 < 0.5 ? 0 : 1
+       })
+    }
+  }
+
+  handleTextFade = (e) => {
+    if (e.target.scrollTop < 50) {
+      this.setState({
+        prev: 1,
+        after: 0
+      })
+    } else if (e.target.scrollTop <= 300) {
+      this.setState({
+        prev: 1 - e.target.scrollTop / 300,
+        after: e.target.scrollTop / 300
+      })
+    } else {
+      this.setState({
+        prev: 0,
+        after: 1
+      })
+    }
   }
 
   componentDidUpdate (prevProps) {
@@ -91,6 +129,10 @@ class PullList extends React.Component {
                 ? this.props.pullPlaceholder
                 : ''
           }
+        </div>
+        <div className='nav-bar' style={{position: 'fixed', zIndex: 10, background: '#fff', textAlign: 'center', width: '100%', height: 50}}>
+          <p style={{position: 'absolute', opacity: this.state.prev}}>Before</p>
+          <p style={{position: 'absolute', opacity: this.state.after}}>After</p>
         </div>
         <ul
           className='list'
